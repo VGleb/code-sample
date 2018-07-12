@@ -1,0 +1,22 @@
+default: &default
+  adapter:            postgresql
+  host:               <%= Settings.db.host %>
+  port:               <%= Settings.db.port %>
+  username:           <%= Settings.db.user %>
+  password:           <%= Settings.db.password %>
+  database:           <%= Settings.db.name %>
+  pool:               <%= Settings.db.connection_pool %>
+  checkout_timeout:   <%= Settings.db.connection_timeout %>
+  encoding:           utf8
+
+production:
+  <<: *default
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+staging:
+  <<: *default
