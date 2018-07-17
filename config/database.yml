@@ -17,6 +17,7 @@ development:
 
 test:
   <<: *default
+  database: "code_sample_test"
 
 staging:
   <<: *default

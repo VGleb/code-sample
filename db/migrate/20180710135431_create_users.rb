@@ -5,6 +5,8 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :crypted_password
       t.string :salt
 
+      t.integer :role, default: 0
+
       t.string :activation_state, default: nil
       t.string :activation_token, default: nil
       t.datetime :activation_token_expires_at, default: nil

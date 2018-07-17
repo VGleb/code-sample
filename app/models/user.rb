@@ -1,5 +1,8 @@
-class User < ApplicationRecord
+class User < ::ApplicationModel
   authenticates_with_sorcery!
 
-  has_many :filters
+  enum role: %i[customer administrator]
+
+  has_many :relationships_filters_users, class_name: 'Relationships::FiltersUsers'
+  has_many :filters, through: :relationships_filters_users
 end

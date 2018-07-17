@@ -4,10 +4,19 @@ FactoryBot.define do
     crypted_password { Sorcery::CryptoProviders::BCrypt.encrypt('ABC123abc', 'salt') }
     salt { :salt }
     activation_state { :active }
+    role { :customer }
 
     trait :on_pending do
       activation_state { :pending }
       activation_token { :activation_token }
+    end
+
+    factory :customer do
+      role { :customer }
+    end
+
+    factory :administrator do
+      role { :administrator }
     end
   end
 end

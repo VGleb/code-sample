@@ -5,12 +5,12 @@ class Event::FilteredListQuery
 
   def initialize(params, relation = ::Event)
     @relation = relation
-    @relation = filter_by_city_id(@relation, params[:city_id]) if params[:city_id].present?
-    @relation = filter_by_start_time(@relation, params[:start_time]) if params[:start_time].present?
-    @relation = filter_by_end_time(@relation, params[:end_time]) if params[:end_time].present?
     if params[:event_topic_title].present?
       @relation = filter_by_event_topic_title(@relation, params[:event_topic_title])
     end
+    @relation = filter_by_city_id(@relation, params[:city_id]) if params[:city_id].present?
+    @relation = filter_by_start_time(@relation, params[:start_time]) if params[:start_time].present?
+    @relation = filter_by_end_time(@relation, params[:end_time]) if params[:end_time].present?
   end
 
   private

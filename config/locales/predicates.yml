@@ -1,0 +1,4 @@
+en:
+  errors:
+    city_exists?:
+      'не существует'

@@ -1,0 +1,124 @@
+AllCops:
+  Exclude:
+    - 'db/migrate/*.rb'
+    - 'db/schema.rb'
+    - 'tmp/**/*'
+    - 'bin/*'
+    - 'config/initializers/**/*'
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'bin/rails'
+    - 'bin/rake'
+    - 'bin/spring'
+    - 'bin/webpack'
+    - 'bin/webpack-watcher'
+    - 'bin/webpack-dev-server'
+    - 'bin/yarn'
+
+Metrics/BlockLength:
+  Exclude:
+    - '**/*_spec.rb'
+    - 'config/routes.rb'
+
+Layout/EmptyLines:
+  Exclude:
+    - 'config/environments/development.rb'
+
+Layout/ExtraSpacing:
+  Exclude:
+    - 'config/environments/development.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 150
+
+Metrics/LineLength:
+  Max: 113
+  Exclude:
+    - 'config/routes.rb'
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
+
+Metrics/ModuleLength:
+  CountComments: false
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  SupportedStyles:
+    - nested
+    - compact
+  Exclude:
+    - 'config/application.rb'
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented_relative_to_receiver
+
+Layout/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Layout/EndAlignment:
+  EnforcedStyleAlignWith: variable
+
+Style/SafeNavigation:
+  Enabled: false
+
+Layout/AlignHash:
+  EnforcedHashRocketStyle: key
+  EnforcedColonStyle: key
+  EnforcedLastArgumentHashStyle: always_inspect
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Style/NegatedIf:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Layout/EmptyLinesAroundArguments:
+  Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
+Lint/MissingCopEnableDirective:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+
+Style/AsciiComments:
+  Enabled: false
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false

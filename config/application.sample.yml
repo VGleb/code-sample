@@ -1,0 +1,11 @@
+hm_secrets_base: "development"
+
+hm_database_host: "localhost"
+hm_database_port: "5432"
+hm_database_user: "dev"
+hm_database_password: "dev"
+hm_database_name: "handmade_dev"
+
+hm_redis_host: "localhost"
+hm_redis_port: "6379"
+hm_redis_database: "2"

@@ -6,15 +6,16 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 gem 'puma', '~> 3.11'
 gem 'pg'
-
-# gem 'bootsnap', '>= 1.1.0', require: false
+gem 'pry-rails'
 gem 'figaro'
 gem 'config'
-
-gem 'rack-cors', require: 'rack/cors'
-gem 'pry-rails'
-gem 'sorcery'
 gem 'interactor', '~> 3.0'
+gem 'sorcery'
+gem 'sidekiq'
+# gem 'dry-validation'
+gem 'hanami-validations'
+# gem 'bootsnap', '>= 1.1.0', require: false
+
 gem 'multi_json'
 gem 'oj'
 gem 'representable'
