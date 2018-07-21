@@ -11,6 +11,9 @@ FactoryBot.define do
       activation_token { :activation_token }
     end
 
+    trait :without_relationships do
+    end
+
     factory :customer do
       role { :customer }
     end

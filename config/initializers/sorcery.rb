@@ -22,7 +22,7 @@ Rails.application.config.sorcery.configure do |config|
   # Set domain option for cookies; Useful for remember_me submodule.
   # Default: `nil`
   #
-  # config.cookie_domain =
+  config.cookie_domain = ".#{Settings.hostname}"
 
   # Allow the remember_me cookie to be set through AJAX
   # Default: `true`
@@ -366,7 +366,7 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `5 * 60`
     #
     # user.reset_password_time_between_emails =
-    
+
     # access counter to a reset password page attribute name
     # Default: `:access_count_to_reset_password_page`
     #

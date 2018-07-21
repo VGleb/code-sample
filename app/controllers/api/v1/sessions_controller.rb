@@ -2,10 +2,10 @@ class Api::V1::SessionsController < ::Api::V1::ApplicationController
   attr_reader :form_authenticity_token # workaround for sorcery login method
 
   def show
-    if current_user
+    if logged_in?
       render json: ::UserRepresenter.new(current_user)
     else
-      render status: :forbidden
+      render status: :unauthorized
     end
   end
 
@@ -13,14 +13,18 @@ class Api::V1::SessionsController < ::Api::V1::ApplicationController
     user = login(request_data_params[:email], request_data_params[:password])
 
     if user
-      render json: ::UserRepresenter.new(user)
+      render json: ::UserRepresenter.new(user), status: :created
     else
-      render status: :forbidden
+      render status: :unprocessable_entity
     end
   end
 
   def destroy
-    logout
-    render status: :no_content
+    if logged_in?
+      logout
+      render status: :no_content
+    else
+      render status: :unauthorized
+    end
   end
 end

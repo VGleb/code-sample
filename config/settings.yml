@@ -1,13 +1,15 @@
+hostname: <%= Figaro.env.cs_hostname %>
+
 db:
-  host:               <%= Figaro.env.hm_database_host! %>
-  port:               <%= Figaro.env.hm_database_port! %>
-  user:               <%= Figaro.env.hm_database_user! %>
-  password:           <%= Figaro.env.hm_database_password! %>
-  name:               <%= Figaro.env.hm_database_name! %>
-  connection_pool:    <%= Figaro.env.hm_database_connection_pool || Figaro.env.rails_max_threads || 10 %>
-  connection_timeout: <%= Figaro.env.hm_database_connection_timeout || 5 %>
+  host:               <%= Figaro.env.cs_database_host! %>
+  port:               <%= Figaro.env.cs_database_port! %>
+  user:               <%= Figaro.env.cs_database_user! %>
+  password:           <%= Figaro.env.cs_database_password! %>
+  name:               <%= Figaro.env.cs_database_name! %>
+  connection_pool:    <%= Figaro.env.cs_database_connection_pool || Figaro.env.rails_max_threads || 10 %>
+  connection_timeout: <%= Figaro.env.cs_database_connection_timeout || 5 %>
 
 redis:
-  host:     <%= Figaro.env.hm_redis_host! %>
-  port:     <%= Figaro.env.hm_redis_port! %>
-  database: <%= Figaro.env.hm_redis_database! %>
+  host:     <%= Figaro.env.cs_redis_host! %>
+  port:     <%= Figaro.env.cs_redis_port! %>
+  database: <%= Figaro.env.cs_redis_database! %>
