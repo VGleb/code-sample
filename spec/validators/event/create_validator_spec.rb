@@ -20,11 +20,11 @@ RSpec.describe Event::CreateValidator do
 
     it_behaves_like 'failure validator if', title: nil
 
-    it_behaves_like 'failure validator if', title: 'a'*151
+    it_behaves_like 'failure validator if', title: 'a' * 151
 
     it_behaves_like 'failure validator if', address: nil
 
-    it_behaves_like 'failure validator if', address: 'a'*151
+    it_behaves_like 'failure validator if', address: 'a' * 151
 
     it_behaves_like 'failure validator if', start_time: nil
 
