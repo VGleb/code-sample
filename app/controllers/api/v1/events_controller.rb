@@ -3,7 +3,7 @@ class Api::V1::EventsController < ::Api::V1::ApplicationController
     query = ::Event::FilteredListQuery.new(params)
     query = ::LimitedQuery.new(params, query)
 
-    ::Filter::Create.call(params: {params: params.to_unsafe_h}, user: current_user) if current_user.present?
+    ::Filter::Create.call(params: {params: params.to_unsafe_h}, user: current_user) if logged_in?
 
     render json: ::CollectionRepresenter.new(query.all).to_hash(meta: query.meta)
   end
